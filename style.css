@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Mono:ital@0;1&display=swap');
+
+:root{
+    --cor-fonte-principal: #211F1C;
+    --cor-fonte-secundaria: #FFFFFF;
+
+    --fonte-principal: "Anton", sans-serif;
+    --fonte-secundaria: "Nunito Sans", sans-serif;
+    --fonte-terciaria: "Roboto Mono", monospace;;
+
+    --fundo-input: #F1F1F1;
+    --fundo-botao: #DBDBDB;
+    --fundo-escuro: #606060;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url('img/background.png');
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+.pagina{
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagina__titulo{
+    font-family: var(--fonte-principal);
+    font-size: 116px;
+}
+.conteudo{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-fonte-principal);
+    width: 570px;
+    padding: 36px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+.conteudo__paragrafo, .conteudo__botao button{
+    font-family: var(--fonte-terciaria);
+    font-size: 24px;
+}
+.conteudo__input{
+    font-family: var(--fonte-terciaria);
+    color: var(--cor-fonte-principal);
+    font-size: 24px;
+    margin: 36px 0; 
+    width: 100%;
+    padding: 23px 0;
+    border-radius: 30px;
+    background-color: var(--fundo-input);
+    text-align: center;
+}
+.conteudo__botao{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#botoes{
+    width: 235px;
+    border-radius: 30px;
+    padding: 23px 0;
+}
+.conteudo__botao__Chutar{
+    color: var(--cor-fonte-secundaria);
+    background-color: var(--fundo-escuro);
+}
+.conteudo__botao__novoJogo{
+    color: var(--fonte-principal);
+    background-color: var(--fundo-botao);
+}
+.rodape{
+    width: 570px;
+    font-family: var(--fonte-terciaria);
+    color: var(--cor-fonte-principal);
+    font-size: 19.4px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icon{
+    font-size: 100px;
+    color: var(--fundo-escuro);
+}
