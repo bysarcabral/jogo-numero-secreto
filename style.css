@@ -66,16 +66,18 @@ body{
     display: flex;
     justify-content: space-between;
 }
-.botoes{
+
+.botao__ajuste{
     width: 30%;
     border-radius: 30px;
     padding: 23px 0;
-}
-.conteudo__botao__Chutar{
+    text-align: center;
+
     color: var(--cor-fonte-secundaria);
     background-color: var(--fundo-escuro);
 }
-.conteudo__botao__novoJogo{
+
+.botao__ajuste:disabled {
     color: var(--fonte-principal);
     background-color: var(--fundo-botao);
 }
@@ -95,7 +97,7 @@ body{
     color: var(--fundo-escuro);
 }
 
-@media (max-width: 1200px){
+@media screen and (max-width: 1200px){
     .pagina__titulo{
         text-align: center;
         padding: 5% 15% 0;
@@ -107,7 +109,10 @@ body{
         flex-direction: column;
         gap: 36px;
     }
-    .botoes{
+    .botao__ajuste{
         width: 100%;
+    }
+    .icon{
+        font-size: 3.125rem;
     }
 }
