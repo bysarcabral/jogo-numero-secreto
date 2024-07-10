@@ -10,27 +10,26 @@ function exibirTextoNaTela (tag, texto){
 }
 function exibirMensagemInicial(){
     exibirTextoNaTela('.pagina__titulo', 'Jogo do Número Secreto');
-    exibirTextoNaTela('.conteudo__paragrafo', 'Escolha uma número entre 1 e 10');
+    exibirTextoNaTela('.conteudo__paragrafo', 'Escolha um número entre 1 e 10');
 }
-exibirMensagemInicial();
 
 function verificarChute(){
     let chute = document.querySelector('.conteudo__input').value;
 
-
     if(chute == numeroSecreto){
         exibirTextoNaTela('.pagina__titulo', 'Acertou!');
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-        let mensagemTetativas =  `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
-        exibirTextoNaTela('.conteudo__paragrafo', mensagemTetativas);
+        let mensagemTentativas =  `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
+        exibirTextoNaTela('.conteudo__paragrafo', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementById('chutar').setAttribute('disabled', true);
     }
     else{
         if(chute > numeroSecreto){
-            exibirTextoNaTela('.conteudo__paragrafo', 'O número secreto é menor');
+            exibirTextoNaTela('.conteudo__paragrafo', 'O número secreto é menor!');
         }
-        else{
-            exibirTextoNaTela('.conteudo__paragrafo', 'O número secreto é maior');
+        if(chute < numeroSecreto){
+            exibirTextoNaTela('.conteudo__paragrafo', 'O número secreto é maior!');
         }
         tentativas++;
         limparCampo();
@@ -58,10 +57,14 @@ function limparCampo(){
     chute = document.querySelector('.conteudo__input');
     chute.value = '';
 }
+
 function reiniciarJogo(){
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.getElementById('chutar').removeAttribute('disabled');
 }
+
+exibirMensagemInicial();

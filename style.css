@@ -9,22 +9,24 @@
     --fonte-terciaria: "Roboto Mono", monospace;;
 
     --fundo-input: #F1F1F1;
-    --fundo-botao: #DBDBDB;
-    --fundo-escuro: #606060;
+    --fundo-botao-disabled: #DBDBDB;
+    --fundo-botao-enabled: #606060;
 }
 
 *{
     margin: 0;
     padding: 0;
 }
+
 body{
     background-image: url('img/background.png');
     height: 100vh;
     width: 100%;
     box-sizing: border-box;
 }
+
 .pagina{
-    padding: 5% 15%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,6 +37,7 @@ body{
     font-size: 7.25rem;
 
 }
+
 .conteudo{
     font-family: var(--fonte-secundaria);
     color: var(--cor-fonte-principal);
@@ -51,16 +54,34 @@ body{
     font-family: var(--fonte-terciaria);
     font-size: 1.5rem;
 }
+
+.conteudo__paragrafo{
+    text-align: center;
+}
+
 .conteudo__input{
     width: 100%;
+    text-align: center;
     font-family: var(--fonte-terciaria);
     color: var(--cor-fonte-principal);
     font-size: 1.5rem;
     padding: 23px 0;
+    border: 2px solid var(--cor-fonte-principal);
     border-radius: 30px;
     background-color: var(--fundo-input);
+
+}
+
+.conteudo__input::placeholder{
+    color: var(--cor-fonte-principal);
+    width: 100%;
     text-align: center;
 }
+
+.conteudo__input::-webkit-outer-spin-button, .conteudo__input::-webkit-inner-spin-button{
+    margin-right: 27px;
+}
+
 .conteudo__botao{
     width: 100%;
     display: flex;
@@ -72,15 +93,18 @@ body{
     border-radius: 30px;
     padding: 23px 0;
     text-align: center;
+    cursor: pointer;
 
     color: var(--cor-fonte-secundaria);
-    background-color: var(--fundo-escuro);
+    background-color: var(--fundo-botao-enabled);
+    border: 2px solid var(--cor-fonte-principal);
 }
 
 .botao__ajuste:disabled {
     color: var(--fonte-principal);
-    background-color: var(--fundo-botao);
+    background-color: var(--fundo-botao-disabled);
 }
+
 .rodape{
     width: 50%;
     padding: 18px 0;
@@ -92,9 +116,10 @@ body{
     align-items: center;
     justify-content: space-around;
 }
+
 .icon{
     font-size: 6.25rem;
-    color: var(--fundo-escuro);
+    color: var(--fundo-botao-enabled);
 }
 
 @media screen and (max-width: 1200px){
@@ -102,17 +127,22 @@ body{
         text-align: center;
         padding: 5% 15% 0;
     }
+
     .conteudo{
         padding: 36px 0;
     }
+
     .conteudo__botao{
         flex-direction: column;
         gap: 36px;
     }
+
     .botao__ajuste{
         width: 100%;
     }
+
     .icon{
         font-size: 3.125rem;
     }
+
 }
